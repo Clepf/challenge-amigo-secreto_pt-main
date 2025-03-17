@@ -161,6 +161,13 @@ ul {
     background-color: var(--color-button-hover);
 }
 
+/* Estilo para o amigo sorteado */
+.sorteado {
+    background-color: #fff3e0 !important;
+    border: 2px solid var(--color-highlight) !important;
+    font-weight: bold;
+}
+
 /* Área de mensagens */
 .mensagem {
     color: var(--color-success);

@@ -1,4 +1,5 @@
 let amigos = [];
+let ultimoSorteado = null;
 
 function adicionarAmigo() {
     // Captura e limpa o valor do campo de entrada
@@ -42,16 +43,25 @@ function sortearAmigo() {
         alert('Adicione pelo menos um amigo antes de sortear.');
         return;
     }
-    
+
+    // Sorteia um índice aleatório
     const indiceAleatorio = Math.floor(Math.random() * amigos.length);
-    const amigoSorteado = amigos[indiceAleatorio];
     
+    // Obtém o amigo sorteado
+    const amigoSorteado = amigos[indiceAleatorio];
+    ultimoSorteado = amigoSorteado;
+
+    // Exibe o resultado
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = '';
-    
+
+    // Adiciona o amigo sorteado à lista de resultados
     const itemResultado = document.createElement('li');
     itemResultado.textContent = `Amigo sorteado: ${amigoSorteado}`;
     resultado.appendChild(itemResultado);
+
+    // Atualiza a lista para destacar o sorteado
+    atualizarListaAmigos();
 }
 
 function atualizarContador() {
