@@ -14,6 +14,13 @@ function adicionarAmigo() {
     inputAmigo.value = '';
     atualizarListaAmigos();
 
+    // Exibe confirmação temporária
+    const mensagem = document.getElementById('mensagem');
+    if (mensagem) {
+        mensagem.textContent = `${nomeAmigo} foi adicionado à lista!`;
+        setTimeout(() => mensagem.textContent = '', 3000);
+    }
+
     // Devolve o foco para o campo de entrada
     inputAmigo.focus();
 }
