@@ -27,6 +27,7 @@ function atualizarListaAmigos() {
         itemLista.textContent = amigos[i];
         listaAmigos.appendChild(itemLista);
     }
+    atualizarContador();
 }
 
 function sortearAmigo() {
@@ -44,4 +45,11 @@ function sortearAmigo() {
     const itemResultado = document.createElement('li');
     itemResultado.textContent = `Amigo sorteado: ${amigoSorteado}`;
     resultado.appendChild(itemResultado);
+}
+
+function atualizarContador() {
+    const contador = document.getElementById('contador');
+    if (contador) {
+        contador.textContent = amigos.length;
+    }
 }

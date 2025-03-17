@@ -160,3 +160,17 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+/* Contador de amigos */
+.contador-container {
+    color: var(--color-text);
+    margin: 10px 0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+#contador {
+    font-weight: bold;
+    color: var(--color-primary);
+}
