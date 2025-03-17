@@ -1,8 +1,9 @@
 let amigos = [];
 
 function adicionarAmigo() {
+    // Captura e limpa o valor do campo de entrada
     const inputAmigo = document.getElementById('amigo');
-    const nomeAmigo = inputAmigo.value;
+    const nomeAmigo = inputAmigo.value.trim();
     
     if (nomeAmigo === '') {
         alert('Por favor, insira um nome.');
@@ -12,6 +13,9 @@ function adicionarAmigo() {
     amigos.push(nomeAmigo);
     inputAmigo.value = '';
     atualizarListaAmigos();
+
+    // Devolve o foco para o campo de entrada
+    inputAmigo.focus();
 }
 
 function atualizarListaAmigos() {
