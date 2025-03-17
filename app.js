@@ -107,3 +107,14 @@ function atualizarContador() {
         contador.textContent = amigos.length;
     }
 }
+
+// Inicializa a aplicação e adiciona suporte para a tecla Enter
+document.addEventListener('DOMContentLoaded', function() {
+    atualizarListaAmigos();
+    
+    document.getElementById('amigo').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            adicionarAmigo();
+        }
+    });
+});
