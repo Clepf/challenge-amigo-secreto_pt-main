@@ -11,8 +11,18 @@ function adicionarAmigo() {
         return;
     }
     
+    // Verifica se o nome já existe na lista
+    if (amigos.includes(nomeAmigo)) {
+        alert("Este nome já está na lista!");
+        return;
+    }
+
+    // Adiciona o amigo à lista
     amigos.push(nomeAmigo);
+
+    // Limpa o campo de entrada
     inputAmigo.value = '';
+    
     atualizarListaAmigos();
 
     // Exibe confirmação temporária
@@ -27,14 +37,27 @@ function adicionarAmigo() {
 }
 
 function atualizarListaAmigos() {
+    // Atualiza a lista de amigos
     const listaAmigos = document.getElementById('listaAmigos');
+    
+    // Limpa a lista atual
     listaAmigos.innerHTML = '';
     
+    // Adiciona cada amigo à lista
     for (let i = 0; i < amigos.length; i++) {
-        const itemLista = document.createElement('li');
-        itemLista.textContent = amigos[i];
-        listaAmigos.appendChild(itemLista);
+        const item = document.createElement('li');
+        item.textContent = amigos[i];
+        
+        // Destaca o último amigo sorteado
+        if (amigos[i] === ultimoSorteado) {
+            item.classList.add('sorteado');
+        }
+
+        // Adiciona o item à lista
+        listaAmigos.appendChild(item);
     }
+
+    // Atualiza o contador
     atualizarContador();
 }
 
