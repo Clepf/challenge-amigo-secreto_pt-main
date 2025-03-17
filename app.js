@@ -87,6 +87,20 @@ function sortearAmigo() {
     atualizarListaAmigos();
 }
 
+// Adicionar a função de reiniciar
+function reiniciarSorteio() {
+    amigos = [];
+    ultimoSorteado = null;
+    
+    // Limpa o campo de entrada e o resultado
+    document.getElementById('amigo').value = '';
+    document.getElementById('resultado').innerHTML = '';
+    
+    atualizarListaAmigos();
+    
+    alert("Sorteio reiniciado!");
+}
+
 function atualizarContador() {
     const contador = document.getElementById('contador');
     if (contador) {
